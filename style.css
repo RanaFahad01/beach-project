@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --LIGHTEST: #CAF0F8;
+    --LIGHTER: #90E0EF;
+    --LIGHT: #00B4D8;
+    --DARK: #0077B6;
+    --DARKER: hsl(239, 94%, 30%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+body {
+    height: 100vh;
+    font-family: "Roboto" , sans-serif;
+    background-color: var(--LIGHTEST);
+    color: var(--DARKER);
+    --DYNAMIC-SIZE: 5vw;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    align-content: center;
+}
+.logo {
+    font-family: "Rubik Distressed" , monospace;
+    font-size: clamp(2rem,var(--DYNAMIC-SIZE),4rem);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 1rem;
+    background-color: var(--LIGHT);
+    font-family: "Rubik Dirt",serif;
+}
+header a:hover, header li:hover {
+    color: var(--LIGHTEST);
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+nav {
+    align-content: center;
+    width: 50%;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+    width: 100%;
+}
+.navbar > li {
+    font-size: clamp(1rem,calc(var(--DYNAMIC-SIZE)/2),2rem);
+    /* font-weight: bolder; */
+}
+
+.caret {
+    display: inline-block;
+    font-size: calc(100%/1.5);
+    height: 100%;
+    margin-top: 3%;
+
+}
+
+.dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: default;
+}
+
+main {
+    height: 100%;
+    z-index: 1;
+    /* background-color: rebeccapurple; */
+}
