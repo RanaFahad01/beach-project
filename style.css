@@ -44,7 +44,7 @@ header {
     background-color: var(--LIGHT);
     font-family: "Rubik Dirt",serif;
 }
-header a:hover, header li:hover {
+header a:hover, .dropdown:hover, .dropdown-menu > li:hover {
     color: var(--LIGHTEST);
 }
 
@@ -70,6 +70,35 @@ nav {
 .navbar > li {
     font-size: clamp(1rem,calc(var(--DYNAMIC-SIZE)/2),2rem);
     /* font-weight: bolder; */
+    margin-inline: 0.5em;
+    text-wrap: nowrap;
+    position: relative;
+    display: inline-block;
+}
+.navbar > li > .dropdown-menu {
+    display: block;
+    position: absolute;
+    padding: 0.25em 0em;
+    min-width: 100%;
+    /* text-align: center; */
+    background-color: var(--LIGHTER);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 2em;
+    display: flex;
+    flex-direction: column;
+    /* gap: 0.5em; */
+}
+.dropdown-menu > li {
+    list-style: none;
+    width: 100%;
+    display: block;
+    padding: 0.5em 0.25em;
+    color: var(--DARKER);
+}
+.dropdown-menu>li:nth-child(odd) {
+    background-color: var(--LIGHTER);
+    filter: brightness(92%);
 }
 
 .caret {
