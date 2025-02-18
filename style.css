@@ -40,11 +40,11 @@ body {
 header {
     display: flex;
     justify-content: space-around;
-    padding: 0.5rem 1rem;
+    padding-inline: 0.5rem ;
     background-color: var(--LIGHT);
     font-family: "Rubik Dirt",serif;
 }
-header a:hover, .dropdown:hover, .dropdown-menu > li:hover {
+header a:hover{
     color: var(--LIGHTEST);
 }
 
@@ -63,9 +63,10 @@ nav {
     list-style: none;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    /* padding: 1rem; */
 
     width: 100%;
+    height: 100%;
 }
 .navbar > li {
     font-size: clamp(1rem,calc(var(--DYNAMIC-SIZE)/2),2rem);
@@ -74,31 +75,45 @@ nav {
     text-wrap: nowrap;
     position: relative;
     display: inline-block;
+    height: 100%;
+    align-content: center;
+}
+.dropdown-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .navbar > li > .dropdown-menu {
-    display: block;
     position: absolute;
-    padding: 0.25em 0em;
-    min-width: 100%;
+    top: 100%;
+    /* padding: 0.25em 0em; */
+    min-width: 102%;
     /* text-align: center; */
     background-color: var(--LIGHTER);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    top: 2em;
-    display: flex;
+    /* top: 2em; */
+    display: none;
     flex-direction: column;
     /* gap: 0.5em; */
+    border-radius: 3px;
+
+    transition: 0.5s ease-in-out all;
 }
 .dropdown-menu > li {
     list-style: none;
     width: 100%;
     display: block;
+    /* position: inherit; */
     padding: 0.5em 0.25em;
     color: var(--DARKER);
 }
 .dropdown-menu>li:nth-child(odd) {
     background-color: var(--LIGHTER);
     filter: brightness(92%);
+}
+.dropdown-menu > li:hover {
+    color: var(--LIGHTEST);
 }
 
 .caret {
@@ -117,8 +132,15 @@ nav {
     cursor: default;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
 main {
     height: 100%;
-    z-index: 1;
-    /* background-color: rebeccapurple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
 }
